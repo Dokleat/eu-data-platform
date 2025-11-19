@@ -1,0 +1,115 @@
+[2025-11-18T00:01:11.149+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-18T00:01:11.175+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: migr_pop2ctz_pipeline.load_migr_pop2ctz_to_sqlserver manual__2025-11-18T00:00:54.449021+00:00 [queued]>
+[2025-11-18T00:01:11.186+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: migr_pop2ctz_pipeline.load_migr_pop2ctz_to_sqlserver manual__2025-11-18T00:00:54.449021+00:00 [queued]>
+[2025-11-18T00:01:11.186+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-18T00:01:11.197+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): load_migr_pop2ctz_to_sqlserver> on 2025-11-18 00:00:54.449021+00:00
+[2025-11-18T00:01:11.211+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=946) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-18T00:01:11.206+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'migr_pop2ctz_pipeline', 'load_migr_pop2ctz_to_sqlserver', 'manual__2025-11-18T00:00:54.449021+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/migr_pop2ctz_pipeline.py', '--cfg-path', '/tmp/tmp34h5_sr2']
+[2025-11-18T00:01:11.215+0000] {standard_task_runner.py:105} INFO - Job 102: Subtask load_migr_pop2ctz_to_sqlserver
+[2025-11-18T00:01:11.214+0000] {standard_task_runner.py:72} INFO - Started process 947 to run task
+[2025-11-18T00:01:11.308+0000] {task_command.py:467} INFO - Running <TaskInstance: migr_pop2ctz_pipeline.load_migr_pop2ctz_to_sqlserver manual__2025-11-18T00:00:54.449021+00:00 [running]> on host 83ca0fe0c31e
+[2025-11-18T00:01:11.978+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='migr_pop2ctz_pipeline' AIRFLOW_CTX_TASK_ID='load_migr_pop2ctz_to_sqlserver' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:54.449021+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-18T00:00:54.449021+00:00'
+[2025-11-18T00:01:11.981+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-18T00:01:12.061+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-18T00:01:12.070+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python src/load/migr_pop2ctz_to_sqlserver.py']
+[2025-11-18T00:01:12.094+0000] {subprocess.py:86} INFO - Output:
+[2025-11-18T00:01:19.148+0000] {subprocess.py:93} INFO - Driver-at e disponueshëm nga pyodbc: ['ODBC Driver 18 for SQL Server']
+[2025-11-18T00:01:19.170+0000] {subprocess.py:93} INFO - RUNNING_IN_DOCKER: True
+[2025-11-18T00:01:19.171+0000] {subprocess.py:93} INFO - SQLSERVER_HOST që po përdoret: sqlserver
+[2025-11-18T00:01:19.172+0000] {subprocess.py:93} INFO - SQLSERVER_CONN_STR:
+[2025-11-18T00:01:19.174+0000] {subprocess.py:93} INFO - DRIVER={ODBC Driver 18 for SQL Server};SERVER=sqlserver,1433;DATABASE=EUDWH;UID=sa;PWD=Dokleat123.;Encrypt=no;TrustServerCertificate=yes;
+[2025-11-18T00:01:19.175+0000] {subprocess.py:93} INFO - Lexoj Parquet nga: data/lake/silver/migr_pop2ctz/migr_pop2ctz.parquet
+[2025-11-18T00:01:19.175+0000] {subprocess.py:93} INFO - Kolonat origjinale në DataFrame: ['Time frequency', 'age', 'Country of citizenship', 'unit', 'sex', 'geo', 'time', 'measure_value']
+[2025-11-18T00:01:19.176+0000] {subprocess.py:93} INFO - Kolonat pas rename: ['Time frequency', 'age', 'citizenship', 'unit', 'sex', 'geo', 'time', 'measure_value']
+[2025-11-18T00:01:19.177+0000] {subprocess.py:93} INFO - Shembull rreshtash pas transformimit:
+[2025-11-18T00:01:19.178+0000] {subprocess.py:93} INFO -    time                                        geo  ... measure_value    unit
+[2025-11-18T00:01:19.179+0000] {subprocess.py:93} INFO - 0  2015  European Union - 27 countries (from 2020)  ...    29561861.0  Number
+[2025-11-18T00:01:19.180+0000] {subprocess.py:93} INFO - 1  2016  European Union - 27 countries (from 2020)  ...    31184854.0  Number
+[2025-11-18T00:01:19.181+0000] {subprocess.py:93} INFO - 2  2017  European Union - 27 countries (from 2020)  ...    32239244.0  Number
+[2025-11-18T00:01:19.182+0000] {subprocess.py:93} INFO - 3  2018  European Union - 27 countries (from 2020)  ...    33610281.0  Number
+[2025-11-18T00:01:19.183+0000] {subprocess.py:93} INFO - 4  2019  European Union - 27 countries (from 2020)  ...    34984203.0  Number
+[2025-11-18T00:01:19.184+0000] {subprocess.py:93} INFO - 
+[2025-11-18T00:01:19.186+0000] {subprocess.py:93} INFO - [5 rows x 5 columns]
+[2025-11-18T00:01:19.187+0000] {subprocess.py:93} INFO - Po lidhem me SQL Server me connection string...
+[2025-11-18T00:01:19.188+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-18T00:01:19.190+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/load/migr_pop2ctz_to_sqlserver.py", line 195, in <module>
+[2025-11-18T00:01:19.191+0000] {subprocess.py:93} INFO -     main()
+[2025-11-18T00:01:19.191+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/load/migr_pop2ctz_to_sqlserver.py", line 177, in main
+[2025-11-18T00:01:19.192+0000] {subprocess.py:93} INFO -     conn = get_connection()
+[2025-11-18T00:01:19.193+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^
+[2025-11-18T00:01:19.193+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/load/migr_pop2ctz_to_sqlserver.py", line 39, in get_connection
+[2025-11-18T00:01:19.195+0000] {subprocess.py:93} INFO -     conn = pyodbc.connect(SQLSERVER_CONN_STR, timeout=5)
+[2025-11-18T00:01:19.196+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-18T00:01:19.198+0000] {subprocess.py:93} INFO - pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]Client unable to establish connection because an error was encountered during handshakes before login. Common causes include client attempting to connect to an unsupported version of SQL Server, server too busy to accept new connections or a resource limitation (memory or maximum allowed connections) on the server. (26) (SQLDriverConnect)')
+[2025-11-18T00:01:19.509+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-18T00:01:19.631+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-18T00:01:19.671+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=migr_pop2ctz_pipeline, task_id=load_migr_pop2ctz_to_sqlserver, run_id=manual__2025-11-18T00:00:54.449021+00:00, execution_date=20251118T000054, start_date=20251118T000111, end_date=20251118T000119
+[2025-11-18T00:01:19.720+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-18T00:01:19.722+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 102 for task load_migr_pop2ctz_to_sqlserver (Bash command failed. The command returned a non-zero exit code 1.; 947)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-18T00:01:19.781+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-11-18T00:01:19.910+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-18T00:01:19.912+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,26 @@
+datasets:
+  - code: DEMO_PJAN
+    description: Population on 1 January
+    params:
+      lang: EN
+      lastTimePeriod: 10
+      geo:
+        - DE
+        - FR
+        - IT
+        - ES
+        - PL
+        - EU27_2020
+  
+  - code: MIGR_POP2CTZ
+    description: Population by citizenship
+    params:
+      lang: EN
+      lastTimePeriod: 10
+      geo:
+        - DE
+        - FR
+        - IT
+        - ES
+        - PL
+        - EU27_2020

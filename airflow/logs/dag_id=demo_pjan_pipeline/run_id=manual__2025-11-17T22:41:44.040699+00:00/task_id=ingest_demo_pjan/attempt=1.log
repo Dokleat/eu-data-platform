@@ -1,0 +1,25 @@
+[2025-11-17T22:41:45.492+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-17T22:41:45.506+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_pjan_pipeline.ingest_demo_pjan manual__2025-11-17T22:41:44.040699+00:00 [queued]>
+[2025-11-17T22:41:45.513+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_pjan_pipeline.ingest_demo_pjan manual__2025-11-17T22:41:44.040699+00:00 [queued]>
+[2025-11-17T22:41:45.513+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-17T22:41:45.526+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): ingest_demo_pjan> on 2025-11-17 22:41:44.040699+00:00
+[2025-11-17T22:41:45.535+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=259) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-17T22:41:45.536+0000] {standard_task_runner.py:72} INFO - Started process 260 to run task
+[2025-11-17T22:41:45.536+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'demo_pjan_pipeline', 'ingest_demo_pjan', 'manual__2025-11-17T22:41:44.040699+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/demo_pjan_pipeline.py', '--cfg-path', '/tmp/tmp6qnrbnvq']
+[2025-11-17T22:41:45.541+0000] {standard_task_runner.py:105} INFO - Job 35: Subtask ingest_demo_pjan
+[2025-11-17T22:41:45.595+0000] {task_command.py:467} INFO - Running <TaskInstance: demo_pjan_pipeline.ingest_demo_pjan manual__2025-11-17T22:41:44.040699+00:00 [running]> on host 6f6a2e0dc708
+[2025-11-17T22:41:45.655+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='demo_pjan_pipeline' AIRFLOW_CTX_TASK_ID='ingest_demo_pjan' AIRFLOW_CTX_EXECUTION_DATE='2025-11-17T22:41:44.040699+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-17T22:41:44.040699+00:00'
+[2025-11-17T22:41:45.656+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-17T22:41:45.676+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-17T22:41:45.677+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python src/collect/ingest_demo_pjan.py']
+[2025-11-17T22:41:45.685+0000] {subprocess.py:86} INFO - Output:
+[2025-11-17T22:41:46.662+0000] {subprocess.py:93} INFO - /opt/***/project/src/collect/ingest_demo_pjan.py:27: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2025-11-17T22:41:46.664+0000] {subprocess.py:93} INFO -   ts = datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+[2025-11-17T22:41:46.689+0000] {subprocess.py:93} INFO - Fetching from: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/DEMO_PJAN?lang=EN&lastTimePeriod=10&geo=DE&geo=FR&geo=IT&geo=ES&geo=PL&geo=EU27_2020
+[2025-11-17T22:41:46.691+0000] {subprocess.py:93} INFO - Saved local bronze file: data/lake/bronze/demo_pjan/demo_pjan_20251117T224146.json
+[2025-11-17T22:41:46.723+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-17T22:41:46.761+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-17T22:41:46.762+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=demo_pjan_pipeline, task_id=ingest_demo_pjan, run_id=manual__2025-11-17T22:41:44.040699+00:00, execution_date=20251117T224144, start_date=20251117T224145, end_date=20251117T224146
+[2025-11-17T22:41:46.791+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-17T22:41:46.839+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-17T22:41:46.840+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
