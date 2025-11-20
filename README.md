@@ -2,6 +2,19 @@
 
 This repository contains an end-to-end data platform built around **Eurostat** public datasets for EU population and migration.  
 The goal is to simulate a realistic, production-style **Data Engineering + ML** project that can be used for learning, portfolio, and interviews.
+## Technologies
+
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
+[![Kafka](https://img.shields.io/badge/Apache%20Kafka-Event%20Streaming-231F20.svg)](https://kafka.apache.org/)
+[![Azulite](https://img.shields.io/badge/Azurite-Blob%20Storage%20Emulator-0078D4.svg)](https://learn.microsoft.com/azure/storage/common/storage-use-azurite)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-Data%20Warehouse-CC2927.svg)](https://www.microsoft.com/sql-server/)
+[![Airflow](https://img.shields.io/badge/Apache%20Airflow-Orchestration-017CEE.svg)](https://airflow.apache.org/)
+[![Metabase](https://img.shields.io/badge/Metabase-BI%20Dashboards-509EE3.svg)](https://www.metabase.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-ML%20API-009688.svg)](https://fastapi.tiangolo.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML%20Model-F7931E.svg)](https://scikit-learn.org/)
+[![Docker](https://img.shields.io/badge/Docker-Containers-2496ED.svg)](https://www.docker.com/)
+[![JSON-stat](https://img.shields.io/badge/JSON--stat-Data%20Parsing-000000.svg)](https://json-stat.org/)
+[![Eurostat API](https://img.shields.io/badge/Eurostat-Open%20Data-003399.svg)](https://ec.europa.eu/eurostat/)
 
 The platform implements a full lifecycle:
 
